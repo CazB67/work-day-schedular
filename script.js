@@ -3,14 +3,10 @@ $(document).ready(function(){
 
   //Create variable for current hour
  var currentHour = moment().format('h');
- console.log(currentHour);
- //Add text area to the timeblocks
- var eventBlock =$(".col-md-10");
- $(eventBlock).append("<textarea>");
- var currentDay = $("#currentDay");
+ console.log("The current hour is " + currentHour);
 
- var hourBlock = $(".hour");
- hourBlock = "";
+
+ 
  
     var update = function() {
     $("#currentDay").text(moment().format('MMMM Do YYYY, h:mm:ss a'));
@@ -19,14 +15,41 @@ $(document).ready(function(){
     
     setInterval(update, 1000);
 
+var hours = ["9", "10", "11", "12", "1", "2", "3", "4","5"];
 
-    function setTimeblocks() {
-      
-      if(currentHour === hourBlock.value){
-        $(eventBlock).addClass("present");
-        
-    }
-  }
+for (var i=0; i< hours.length; i++) {
+
+  var rowX = $("<div>");
+  rowX.addClass("row");
+  $(".container").append(rowX);
+
+  var timeBlock = $("<div>");
+  timeBlock.addClass("col-md-1 hour");
+  $(rowX).append(timeBlock);
+  timeBlock.text(hours[i]);
+
+  var eventDiv = $("<div>");
+  eventDiv.addClass("col-md-10");
+  $(rowX).append(eventDiv);
+  
+  $(eventDiv).append("<textarea>");
+
+  var buttonDiv = $("<div>");
+  buttonDiv.addClass("col-md-1 saveBtn");
+  $(rowX).append(buttonDiv);
+
+  
+  //Add text area to the timeblocks
+ 
+  /*
+  <!--<div class = "row">
+  <div class = "col-md-1 hour">9am</div>
+  <div class = "col-md-10"></div>
+  <div class = "col-md-1 saveBtn"></div>
+</div>-->
+*/
+
+}
 
 
     

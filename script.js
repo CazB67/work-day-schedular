@@ -1,6 +1,46 @@
  
 $(document).ready(function(){
   var hours = ["9", "10", "11", "12", "13", "14", "15", "16","17"];
+  var rememberObj = [
+    {
+      oclock: "9",
+      reminder : " "
+    },
+    {
+      oclock: "10",
+      reminder : " "
+    },
+    {
+      oclock: "11",
+      reminder : " "
+    },
+    {
+      oclock: "12",
+      reminder : " "
+    },
+    {
+      oclock: "13",
+      reminder : " "
+    },
+    {
+      oclock: "14",
+      reminder : " "
+    },
+    {
+      oclock: "15",
+      reminder : " "
+    },
+    {
+      oclock: "16",
+      reminder : " "
+    },
+    {
+      oclock: "17",
+      reminder : " "
+    }
+  ];
+
+  
     renderDisplay();
  
   //Updates clock every second
@@ -16,17 +56,13 @@ $(document).ready(function(){
     }
     setInterval(updateScreen, 60000);
 
-//Array of hours
-
-
-
 function renderDisplay() {
   //Create variable for current hour
   var currentHour = moment().format('H');
   console.log("The current hour is " + currentHour);
 
   $(".container").empty();
-  for (var i=0; i< hours.length; i++) {
+  for (var i=0; i< rememberObj.length; i++) {
 
     //Row created and added to container
     var rowX = $("<div>");
@@ -40,12 +76,13 @@ function renderDisplay() {
     
     var displayHour;
     //So the displayed hours are not in 24 hour time
-    if(hours[i] > 12) {
-      displayHour = (hours[i] - 12) + "pm";
-    }else if(parseInt(hours[i]) === 12){
-      displayHour = hours[i] + "pm"; 
+
+    if(rememberObj[i].oclock > 12) {
+      displayHour = (rememberObj[i].oclock - 12) + "pm";
+    }else if(parseInt(rememberObj[i].oclock) === 12){
+      displayHour = rememberObj[i].oclock + "pm"; 
     }else {
-      displayHour = hours[i] + "am";
+      displayHour = rememberObj[i].oclock + "am";
       }
       
       timeBlock.text(displayHour);
@@ -57,6 +94,7 @@ function renderDisplay() {
 
     //text area added
     $(eventDiv).append("<textarea>");
+   
 
     //Column for save button added
     var buttonDiv = $("<div>");
@@ -69,26 +107,19 @@ function renderDisplay() {
     // function RowClicked will use (in this case dispHour), and the value, in this case the displayHour.
     $(buttonDiv).on("click", {
       dispHour: displayHour,
-      array: i,
     }, rowClicked );
 
     //Row clicked has an 'event' argument passed into it.
-    // the event contains the object we created when we defined the .on click.
-    // In order to retrieve the info, javascript has an object heirarchy that uses
-    // event.data.* 
+    // The event contains the object we created when we defined the .on click.
+    // In order to retrieve the info, javascript has an object heirarchy that uses event.data.
   function rowClicked(event) {
-    alert(event.data.dispHour + event.data.array );
-
+    alert(event.data.dispHour);
   }
-
-  
-    //Tester
-    //currentHour = 13;
     //Setting classes for past, present and future events
-    if(parseInt(currentHour) === parseInt(hours[i])){
+    if(parseInt(currentHour) === parseInt(rememberObj[i].oclock)){
       eventDiv.addClass("present");
 
-    }else if(parseInt(currentHour) > parseInt(hours[i])){
+    }else if(parseInt(currentHour) > parseInt(rememberObj[i].oclock)){
       eventDiv.addClass("past");
     }else{
       eventDiv.addClass("future");

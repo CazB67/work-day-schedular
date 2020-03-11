@@ -114,7 +114,7 @@ function renderDisplay() {
     // In order to retrieve the info, javascript has an object heirarchy that uses event.data.
   function rowClicked(event) {
     alert(event.data.dispHour);
-  }
+  } //currentHour=13;
     //Setting classes for past, present and future events
     if(parseInt(currentHour) === parseInt(rememberObj[i].oclock)){
       eventDiv.addClass("present");

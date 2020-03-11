@@ -1,9 +1,6 @@
  
 $(document).ready(function(){
   var hours = ["9", "10", "11", "12", "13", "14", "15", "16","17"];
-  //Create variable for current hour
-  var currentHour = moment().format('H');
-    console.log("The current hour is " + currentHour);
     renderDisplay();
  
   //Updates clock every second
@@ -24,8 +21,11 @@ $(document).ready(function(){
 
 
 function renderDisplay() {
+  //Create variable for current hour
+  var currentHour = moment().format('H');
+  console.log("The current hour is " + currentHour);
+
   $(".container").empty();
-  console.log("fhfhgfhfhf");
   for (var i=0; i< hours.length; i++) {
 
     //Row created and added to container
@@ -63,8 +63,27 @@ function renderDisplay() {
     buttonDiv.addClass("col-md-1 saveBtn");
     $(rowX).append(buttonDiv);
 
-  //Tester
-  //currentHour = 13;
+    // Register the click -- for each button we have to have
+    // a way of identifying the what value we're looking at.
+    // As such we pass through an object, that contains what the 
+    // function RowClicked will use (in this case dispHour), and the value, in this case the displayHour.
+    $(buttonDiv).on("click", {
+      dispHour: displayHour,
+      array: i,
+    }, rowClicked );
+
+    //Row clicked has an 'event' argument passed into it.
+    // the event contains the object we created when we defined the .on click.
+    // In order to retrieve the info, javascript has an object heirarchy that uses
+    // event.data.* 
+  function rowClicked(event) {
+    alert(event.data.dispHour + event.data.array );
+
+  }
+
+  
+    //Tester
+    //currentHour = 13;
     //Setting classes for past, present and future events
     if(parseInt(currentHour) === parseInt(hours[i])){
       eventDiv.addClass("present");

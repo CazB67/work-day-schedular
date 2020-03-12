@@ -39,8 +39,10 @@ $(document).ready(function(){
       reminder : " "
     }
   ];
-
   
+  
+    //var reminderText = rememberObj[i].reminder;
+   // reminderText.text(textArea);
     renderDisplay();
  
   //Updates clock every second
@@ -93,7 +95,7 @@ function renderDisplay() {
     $(rowX).append(eventDiv);
 
     //text area added
-    var textArea = ("<textarea>");
+    var textArea = $("<textarea>");
     $(eventDiv).append(textArea);
    
 
@@ -105,16 +107,24 @@ function renderDisplay() {
     // Register the click -- for each button we have to have
     // a way of identifying the what value we're looking at.
     // As such we pass through an object, that contains what the 
-    // function RowClicked will use (in this case dispHour), and the value, in this case the displayHour.
+    // function RowClicked will use (in this case hours), and the value, in this case the rememberObj[i].oclock
     $(buttonDiv).on("click", {
       inTimeBlock: displayHour,
+      rowNumber: i,
+      textAreaEl: textArea,
+      //eventToRemember : reminderText
     }, rowClicked );
 
     //Row clicked has an 'event' argument passed into it.
     // The event contains the object we created when we defined the .on click.
     // In order to retrieve the info, javascript has an object heirarchy that uses event.data.
   function rowClicked(event) {
-    alert(event.data.inTimeBlock);
+    console.log(event.data.rowNumber);
+    var reminderTextInputtedByMe = $(event.data.textAreaEl);
+    console.log(reminderTextInputtedByMe[0].value);
+
+    localStorage.setItem("reminders", JSON.stringify(reminderTextInputtedByMe[0].value));
+    
   } //currentHour=13;
     //Setting classes for past, present and future events
     if(parseInt(currentHour) === parseInt(rememberObj[i].oclock)){

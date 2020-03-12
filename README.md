@@ -26,7 +26,7 @@ This has been deployed to the URLs
 
 To use this work day schedular click on the link of the deployed application above. The user will be presented with this screen.
 
-![Work Day Schedular](Capture2.PNG)
+![Work Day Schedular](Capture1.PNG)
 
 ## Credits
 * Team at UWA Coding Bootcamp

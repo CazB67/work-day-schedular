@@ -58,7 +58,6 @@ $(document).ready(function(){
 function renderDisplay() {
   //Create variable for current hour
   var currentHour = moment().format('H');
-  console.log("The current hour is " + currentHour);
   rememberObj = JSON.parse(localStorage.getItem("reminders"));
 
   $(".container").empty();
@@ -102,6 +101,9 @@ function renderDisplay() {
     var buttonDiv = $("<div>");
     buttonDiv.addClass("col-md-1 saveBtn");
     $(rowX).append(buttonDiv);
+    var icon = $("<i>");
+    icon.addClass("fas fa-save");
+    $(buttonDiv).append(icon);
 
     //Creating event listener with some arguments
     $(buttonDiv).on("click", {

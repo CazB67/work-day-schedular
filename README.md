@@ -2,12 +2,15 @@
 Assignment 5
 
 ## Description
-The task of this assignment was to create a work day schedular powered by jquery where the user could add events to a daily calendar and save them to local storage.
+The task of this assignment was to create a work day schedular powered by jquery where the user could add events to a daily planner and save them to local storage.
+
 The assignment criteria are:
-* gjghj
-* jhjgj
-* jghjj
-* jghjgh
+* The current day displayed at the top of the calendar on opening
+* Timeblocks for standard business hours
+* Color coded timeblocks to indicate whether it is in the past, present, or future
+* Being able to enter an event when clicking into a timeblock  
+* When the save button for that timeblock is clicked, the text for that event is saved in local storage
+* When the page is refreshed the events stay
 
 
 ## Installation
@@ -20,6 +23,10 @@ This has been deployed to the URLs
 * The URL of the deployed application is https://cazb67.github.io/work-day-schedular/
 
 * The URL of the GitHub repository is https://github.com/CazB67/work-day-schedular
+
+To use this work day schedular click on the link of the deployed application above. The user will be presented with this screen.
+
+![Work Day Schedular](Capture2.PNG)
 
 ## Credits
 * Team at UWA Coding Bootcamp

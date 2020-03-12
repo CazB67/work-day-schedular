@@ -1,13 +1,13 @@
-# work-day-schedular
+# Work-Day-Schedular
 Assignment 5
 
 ## Description
 The task of this assignment was to create a work day schedular powered by jquery where the user could add events to a daily calendar and save them to local storage.
 The assignment criteria are:
-* 
-* 
-* 
-* 
+* gjghj
+* jhjgj
+* jghjj
+* jghjgh
 
 
 ## Installation

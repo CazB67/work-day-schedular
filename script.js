@@ -58,7 +58,7 @@ $(document).ready(function(){
 function renderDisplay() {
   //Create variable for current hour
   var currentHour = moment().format('H');
-  rememberObj = JSON.parse(localStorage.getItem("reminders"));
+  
 
   $(".container").empty();
 

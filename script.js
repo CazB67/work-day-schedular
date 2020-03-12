@@ -58,7 +58,7 @@ $(document).ready(function(){
 function renderDisplay() {
   //Create variable for current hour
   var currentHour = moment().format('H');
-  rememberObj = JSON.parse(localStorage.getItem("reminders"));
+  //rememberObj = JSON.parse(localStorage.getItem("reminders"));
 
   $(".container").empty();
 
@@ -130,7 +130,7 @@ function rowClicked(event) {
   var reminderTextInput = $(event.data.textAreaEl);
   console.log(reminderTextInput[0].value);
   rememberObj[event.data.rowNumber].reminder = reminderTextInput[0].value;
-  localStorage.setItem("reminders", JSON.stringify(rememberObj));
+  //localStorage.setItem("reminders", JSON.stringify(rememberObj));
   
   renderDisplay();
 } 

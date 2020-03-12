@@ -1,6 +1,6 @@
  
 $(document).ready(function(){
-  var hours = ["9", "10", "11", "12", "13", "14", "15", "16","17"];
+  
   var rememberObj = [
     {
       oclock: "9",
@@ -93,7 +93,8 @@ function renderDisplay() {
     $(rowX).append(eventDiv);
 
     //text area added
-    $(eventDiv).append("<textarea>");
+    var textArea = ("<textarea>");
+    $(eventDiv).append(textArea);
    
 
     //Column for save button added
@@ -106,14 +107,14 @@ function renderDisplay() {
     // As such we pass through an object, that contains what the 
     // function RowClicked will use (in this case dispHour), and the value, in this case the displayHour.
     $(buttonDiv).on("click", {
-      dispHour: displayHour,
+      inTimeBlock: displayHour,
     }, rowClicked );
 
     //Row clicked has an 'event' argument passed into it.
     // The event contains the object we created when we defined the .on click.
     // In order to retrieve the info, javascript has an object heirarchy that uses event.data.
   function rowClicked(event) {
-    alert(event.data.dispHour);
+    alert(event.data.inTimeBlock);
   } //currentHour=13;
     //Setting classes for past, present and future events
     if(parseInt(currentHour) === parseInt(rememberObj[i].oclock)){

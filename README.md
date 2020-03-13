@@ -18,6 +18,8 @@ To install this project I flowed out what I needed to code.
 
 ![Work Day Schedular Flow Chart](flowchart.PNG)
 
+I still have no idea where to put code and functions. It is all hacking.
+
 
 ## Usage
 This has been deployed to the URLs 
@@ -29,6 +31,8 @@ This has been deployed to the URLs
 To use this work day schedular click on the link of the deployed application above. The user will be presented with this screen.
 
 ![Work Day Schedular](Capture.PNG)
+
+The red row captures the current hour time block. The grey rows capture the time blocks that have passed and the green time blocks capture future time blocks. The user inputs event into the text area then clicks on the save button in that row. The event is saved to local storage and when a new day arrives the event is cleared from local storage.
 
 ## Credits
 * Team at UWA Coding Bootcamp

@@ -64,6 +64,9 @@ function renderDisplay() {
     localStorage.clear();
   }
 
+  if (localStorage.getItem("reminders") !== null) {
+  rememberObj = JSON.parse(localStorage.getItem("reminders"));
+  }
 
     $(".container").empty();
 
@@ -143,7 +146,7 @@ function rowClicked(event) {
   localStorage.setItem("reminders", JSON.stringify(rememberObj));
   
   renderDisplay();
-  rememberObj = JSON.parse(localStorage.getItem("reminders"));
+  
 } 
 
 

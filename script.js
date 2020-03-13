@@ -1,6 +1,7 @@
  
 $(document).ready(function(){
   
+  //Array of rows
   var rememberObj = [
     {
       time: "9",
@@ -55,19 +56,23 @@ $(document).ready(function(){
     }
     setInterval(updateScreen, 60000);
 
+
 function renderDisplay() {
 
   //Create variable for current hour
   var currentHour = moment().format('H');
 
+  //Clear storage on a new day
   if (currentHour === 0) {
     localStorage.clear();
   }
 
+  //Retrieve storage when page refreshes if events have been input.
   if (localStorage.getItem("reminders") !== null) {
   rememberObj = JSON.parse(localStorage.getItem("reminders"));
   }
 
+    //Empty container each time it renders so you only have one set of rows.
     $(".container").empty();
 
   //Loop to add all rows in array
@@ -82,7 +87,8 @@ function renderDisplay() {
     var timeBlock = $("<div>");
     timeBlock.addClass("col-md-1 hour");
     $(rowX).append(timeBlock);
-    
+
+    //Because time is in 24 hour format so it is easier to do before and after. Change so what the user sees is more user friendly eg 1pm instead of 13.
     var displayHour;
     //So the displayed hours are not in 24 hour time
     if(rememberObj[i].time > 12) {
@@ -131,6 +137,8 @@ function renderDisplay() {
     }
   }
 }
+
+//When save button is clicked the text input in text area is saved to local storage and then call renderDisplay() to update screen.
 function rowClicked(event) {
   var reminderTextInput = $(event.data.textAreaEl);
   rememberObj[event.data.rowNumber].reminder = reminderTextInput[0].value;

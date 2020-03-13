@@ -119,9 +119,6 @@ function renderDisplay() {
       rowNumber: i,
       textAreaEl: textArea,
     }, rowClicked );
-
-    
-
     
     //Setting classes for past, present and future events
     if(parseInt(currentHour) === parseInt(rememberObj[i].time)){
@@ -131,24 +128,17 @@ function renderDisplay() {
       eventDiv.addClass("past");
     }else{
       eventDiv.addClass("future");
-      
     }
-    
   }
-  
 }
 function rowClicked(event) {
   var reminderTextInput = $(event.data.textAreaEl);
-  console.log(event.data.rowNumber);
-  console.log(reminderTextInput[0].value);
-  
   rememberObj[event.data.rowNumber].reminder = reminderTextInput[0].value;
   localStorage.setItem("reminders", JSON.stringify(rememberObj));
   
   renderDisplay();
   
 } 
-
 
 });
 

@@ -1,4 +1,4 @@
-# Work-Day-Schedular
+# Work-Day-Scheduler
 Assignment 5
 
 ## Description

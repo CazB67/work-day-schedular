@@ -56,11 +56,16 @@ $(document).ready(function(){
     setInterval(updateScreen, 60000);
 
 function renderDisplay() {
+
   //Create variable for current hour
   var currentHour = moment().format('H');
-  //rememberObj = JSON.parse(localStorage.getItem("reminders"));
 
-  $(".container").empty();
+  if (currentHour === 0) {
+    localStorage.clear();
+  }
+
+
+    $(".container").empty();
 
   //Loop to add all rows in array
   for (var i=0; i< rememberObj.length; i++) {
@@ -112,7 +117,9 @@ function renderDisplay() {
       textAreaEl: textArea,
     }, rowClicked );
 
-  
+    
+
+    
     //Setting classes for past, present and future events
     if(parseInt(currentHour) === parseInt(rememberObj[i].time)){
       eventDiv.addClass("present");
@@ -123,17 +130,22 @@ function renderDisplay() {
       eventDiv.addClass("future");
       
     }
+    
   }
+  
 }
-
 function rowClicked(event) {
   var reminderTextInput = $(event.data.textAreaEl);
+  console.log(event.data.rowNumber);
   console.log(reminderTextInput[0].value);
+  
   rememberObj[event.data.rowNumber].reminder = reminderTextInput[0].value;
-  //localStorage.setItem("reminders", JSON.stringify(rememberObj));
+  localStorage.setItem("reminders", JSON.stringify(rememberObj));
   
   renderDisplay();
+  rememberObj = JSON.parse(localStorage.getItem("reminders"));
 } 
+
 
 });
 

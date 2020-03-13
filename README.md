@@ -14,7 +14,9 @@ The assignment criteria are:
 
 
 ## Installation
-To install this project 
+To install this project I flowed out what I needed to code.
+
+![Work Day Schedular Flow Chart](Flow chart.PNG)
 
 
 ## Usage

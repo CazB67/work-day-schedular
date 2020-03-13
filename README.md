@@ -24,9 +24,9 @@ I still have no idea where to put code and functions. It is all hacking.
 ## Usage
 This has been deployed to the URLs 
 
-* The URL of the deployed application is https://cazb67.github.io/work-day-schedular/
+* The URL of the deployed application is https://cazb67.github.io/work-day-scheduler/
 
-* The URL of the GitHub repository is https://github.com/CazB67/work-day-schedular
+* The URL of the GitHub repository is https://github.com/CazB67/work-day-scheduler
 
 To use this work day schedular click on the link of the deployed application above. The user will be presented with this screen.
 

@@ -55,21 +55,17 @@ $(document).ready(function(){
       renderDisplay();
     }
     setInterval(updateScreen, 60000);
-
+var currentDay;
 
 function renderDisplay() {
 
   //Create variable for current hour
   var currentHour = moment().format('H');
-
-  //Clear storage on a new day
-  if (currentHour === 0) {
-    localStorage.clear();
-  }
+  currentDay = (moment().format('MMMM Do YYYY'));
 
   //Retrieve storage when page refreshes if events have been input.
-  if (localStorage.getItem("reminders") !== null) {
-  rememberObj = JSON.parse(localStorage.getItem("reminders"));
+  if (localStorage.getItem(currentDay) !== null) {
+  rememberObj = JSON.parse(localStorage.getItem(currentDay));
   }
 
     //Empty container each time it renders so you only have one set of rows.
@@ -142,7 +138,7 @@ function renderDisplay() {
 function rowClicked(event) {
   var reminderTextInput = $(event.data.textAreaEl);
   rememberObj[event.data.rowNumber].reminder = reminderTextInput[0].value;
-  localStorage.setItem("reminders", JSON.stringify(rememberObj));
+  localStorage.setItem(currentDay, JSON.stringify(rememberObj));
   
   renderDisplay();
   

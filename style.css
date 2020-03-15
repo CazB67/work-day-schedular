@@ -6,6 +6,8 @@ body {
 
 .container {
   padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20 px;
 }
 
 textarea {

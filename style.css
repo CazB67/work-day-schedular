@@ -77,7 +77,7 @@ textarea {
 }
 
 .saveBtn i:hover {
-  font-size: 30px;
+  font-size: 50px;
   transition: all .3s ease-in-out;
  
 }
@@ -87,5 +87,6 @@ i {
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
+  font-size: 25px;
   
 }

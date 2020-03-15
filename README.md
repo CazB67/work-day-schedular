@@ -18,7 +18,7 @@ To install this project I flowed out what I needed to code.
 
 ![Work Day Schedular Flow Chart](flowchart.PNG)
 
-The application was made using JQuery, Javascript, HTML, CSS, Bootstrap and the moment.js library to display the date and time. Font awesome was used for the save icon. Bootstrap was used to create responsive HTML. Javascript and JQuery creates the interactive onclick events and events are save as reminders to local storage. CSS was used to style the HTML.
+The application was made using JQuery, Javascript, HTML, CSS, Bootstrap and the moment.js library to display the date and time. Font awesome was used for the save icon. Bootstrap was used to create responsive HTML. Javascript and JQuery creates the interactive onclick events and events are saved as reminders to local storage. CSS was used to style the HTML.
 
 
 ## Usage

@@ -1,5 +1,5 @@
 # Work-Day-Scheduler
-Assignment 5
+A calendar application that allows the user to save events for each hour of the day. This application runs in the browser and features dynamically updated HTML and CSS powered by JQuery.
 
 ## Description
 The task of this assignment was to create a work day schedular powered by jquery where the user could add events to a daily planner and save them to local storage.
